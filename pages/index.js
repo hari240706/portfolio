@@ -91,7 +91,7 @@ export default function Home() {
 
         {/* SECTION 1: Hero Introduction */}
         <section className="min-h-screen relative flex items-center overflow-x-hidden pt-20">
-          <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
+          {/* Grid pattern removed for cleaner look */}
           
           <div className="container mx-auto px-6 py-20 relative z-10">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-12">

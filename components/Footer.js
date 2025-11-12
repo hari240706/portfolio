@@ -8,7 +8,7 @@ export default function Footer() {
     { name: "LinkedIn", icon: "💼", url: "https://www.linkedin.com/in/hariprasad-r-95096232a" },
     { name: "Instagram", icon: "💻", url: "https://www.instagram.com/hari_24_07_06" },
     { name: "X", icon: "🐦", url: "https://x.com/hari_24_07_06" },
-    { name: "Youtube", icon: "▶️", url: "https://youtube.com/@hari_07_06" },
+    { name: "Discord", icon: "▶️", url: "https://discordapp.com/users/1368111848947449916" },
   ];
 
   const quickLinks = [
