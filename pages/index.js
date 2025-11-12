@@ -297,19 +297,6 @@ export default function Home() {
                         transition={{ duration: 0.3 }}
                       />
 
-                      {/* Digital scan lines */}
-                      <motion.div
-                        className="absolute inset-0"
-                        animate={{
-                          backgroundPosition: ["0% 0%", "0% 100%"],
-                        }}
-                        transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                        style={{
-                          backgroundImage: "linear-gradient(transparent 50%, rgba(59, 130, 246, 0.1) 50%)",
-                          backgroundSize: "100% 4px",
-                        }}
-                      />
-
                       {/* Corner tech brackets */}
                       <div className="absolute top-2 left-2 w-8 h-8 border-l-2 border-t-2 border-cyan-400"></div>
                       <div className="absolute top-2 right-2 w-8 h-8 border-r-2 border-t-2 border-cyan-400"></div>
