@@ -216,7 +216,7 @@ export default function Home() {
               >
                 <div className="relative">
                   {/* Hexagonal glowing border */}
-                  <div className="relative w-80 h-80 md:w-96 md:h-96" style={{ display: 'block' }}>
+                  <div className="relative w-80 h-80 md:w-96 md:h-96">
                     {/* Outer hexagon glow */}
                     <motion.div
                       className="absolute inset-0"
@@ -281,8 +281,8 @@ export default function Home() {
                       ))}
                     </motion.div>
 
-                    {/* Inner hexagonal image container - ENHANCED FIREFOX FIX */}
-                    <motion.div
+                    {/* Inner hexagonal image container - PLAIN DIV FOR FIREFOX */}
+                    <div
                       className="absolute inset-4 overflow-hidden group"
                       style={{
                         WebkitClipPath: hexagonClip,
@@ -291,8 +291,6 @@ export default function Home() {
                         height: 'calc(100% - 32px)',
                         display: 'block',
                       }}
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ type: "spring", stiffness: 300 }}
                     >
                       {/* Profile Image */}
                       <img
@@ -323,7 +321,7 @@ export default function Home() {
                       <div className="absolute top-2 right-2 w-8 h-8 border-r-2 border-t-2 border-cyan-400"></div>
                       <div className="absolute bottom-2 left-2 w-8 h-8 border-l-2 border-b-2 border-cyan-400"></div>
                       <div className="absolute bottom-2 right-2 w-8 h-8 border-r-2 border-b-2 border-cyan-400"></div>
-                    </motion.div>
+                    </div>
                   </div>
                 </div>
               </motion.div>
