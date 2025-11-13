@@ -55,6 +55,8 @@ export default function Home() {
     },
   ];
 
+  const hexagonClip = "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)";
+
   return (
     <>
       <Navbar />
@@ -214,13 +216,16 @@ export default function Home() {
               >
                 <div className="relative">
                   {/* Hexagonal glowing border */}
-                  <div className="relative w-80 h-80 md:w-96 md:h-96">
+                  <div className="relative w-80 h-80 md:w-96 md:h-96" style={{ display: 'block' }}>
                     {/* Outer hexagon glow */}
                     <motion.div
                       className="absolute inset-0"
                       style={{
-                        WebkitClipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
-                        clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
+                        WebkitClipPath: hexagonClip,
+                        clipPath: hexagonClip,
+                        width: '100%',
+                        height: '100%',
+                        display: 'block',
                       }}
                       animate={{
                         boxShadow: [
@@ -276,12 +281,15 @@ export default function Home() {
                       ))}
                     </motion.div>
 
-                    {/* Inner hexagonal image container - FIREFOX FIX APPLIED */}
+                    {/* Inner hexagonal image container - ENHANCED FIREFOX FIX */}
                     <motion.div
                       className="absolute inset-4 overflow-hidden group"
                       style={{
-                        WebkitClipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
-                        clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
+                        WebkitClipPath: hexagonClip,
+                        clipPath: hexagonClip,
+                        width: 'calc(100% - 32px)',
+                        height: 'calc(100% - 32px)',
+                        display: 'block',
                       }}
                       whileHover={{ scale: 1.05 }}
                       transition={{ type: "spring", stiffness: 300 }}
@@ -290,16 +298,23 @@ export default function Home() {
                       <img
                         src="/assets/Gemini_Generated_Image_mt5l74mt5l74mt5l-1.jpg"
                         alt="Hariprasad R"
-                        className="w-full h-full object-cover"
                         style={{
-                          WebkitClipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
-                          clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
+                          WebkitClipPath: hexagonClip,
+                          clipPath: hexagonClip,
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                          display: 'block',
                         }}
                       />
 
                       {/* Glitch effect overlay */}
                       <motion.div
                         className="absolute inset-0 bg-gradient-to-br from-blue-600/40 via-transparent to-purple-600/40 opacity-0 group-hover:opacity-100"
+                        style={{
+                          WebkitClipPath: hexagonClip,
+                          clipPath: hexagonClip,
+                        }}
                         transition={{ duration: 0.3 }}
                       />
 
