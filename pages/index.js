@@ -302,16 +302,6 @@ export default function Home() {
                       <div className="absolute top-2 right-2 w-8 h-8 border-r-2 border-t-2 border-cyan-400"></div>
                       <div className="absolute bottom-2 left-2 w-8 h-8 border-l-2 border-b-2 border-cyan-400"></div>
                       <div className="absolute bottom-2 right-2 w-8 h-8 border-r-2 border-b-2 border-cyan-400"></div>
-
-                      {/* Status indicator - Hidden on mobile, visible on desktop */}
-                      <motion.div
-                        className="absolute top-4 right-4 hidden md:flex items-center gap-2 bg-black/60 backdrop-blur-sm px-3 py-1.5 rounded-full border border-green-500/50"
-                        animate={{ opacity: [0.5, 1, 0.5] }}
-                        transition={{ duration: 2, repeat: Infinity }}
-                      >
-                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                        <span className="text-xs text-green-400 font-mono">ONLINE</span>
-                      </motion.div>
                     </motion.div>
                   </div>
                 </div>
