@@ -219,6 +219,7 @@ export default function Home() {
                     <motion.div
                       className="absolute inset-0"
                       style={{
+                        WebkitClipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
                         clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
                       }}
                       animate={{
@@ -275,10 +276,11 @@ export default function Home() {
                       ))}
                     </motion.div>
 
-                    {/* Inner hexagonal image container */}
+                    {/* Inner hexagonal image container - FIREFOX FIX APPLIED */}
                     <motion.div
                       className="absolute inset-4 overflow-hidden group"
                       style={{
+                        WebkitClipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
                         clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
                       }}
                       whileHover={{ scale: 1.05 }}
@@ -289,6 +291,10 @@ export default function Home() {
                         src="/assets/Gemini_Generated_Image_mt5l74mt5l74mt5l-1.jpg"
                         alt="Hariprasad R"
                         className="w-full h-full object-cover"
+                        style={{
+                          WebkitClipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
+                          clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
+                        }}
                       />
 
                       {/* Glitch effect overlay */}
