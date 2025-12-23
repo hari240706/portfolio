@@ -9,6 +9,15 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
+      title: "Secure User Authentication System",
+      description: "A secure authentication system that implements multi-factor verification, role-based access control, and strong password policies to protect user accounts from common cyber attacks.",
+      tech: ["Node.js", "MongoDB", "JWT", "BCrypt"],
+      category: "cybersecurity",
+      image: "🛡️",
+      link: "https://github.com/hari240706/Cyber-Security-Authentication-Project.git"
+    },
+    {
+      id: 2,
       title: "Urban Energy Optimization with Personalized Carbon Footprint Tracking Overview",
       description: "This project aims to develop a system that optimizes urban energy consumption while providing personalized carbon footprint tracking for residents. By integrating smart city technologies, the system seeks to promote sustainable living practices and reduce overall carbon emissions in urban environments.",
       tech: ["React", "Node.js", "JavaScript", "MongoDB"],
@@ -17,7 +26,7 @@ export default function Projects() {
       link: "https://github.com/hari240706/Urban-Energy-Optimization-with-Personalized-Carbon-Footprint-Tracking-for-Sustainable-Smart-Cities.git",
     },
     {
-      id: 2,
+      id: 3,
       title: "Scholarship Track Portal",
       description: "Scholarship Track Portal is a web-based application designed to simplify scholarship management for students and administrators. The portal enables students to apply for scholarships and track application statuses, while administrators can manage applications, verify eligibility, and streamline the scholarship workflow.",
       tech: ["React", "Node.js", "MongoDB", "OAuth"],
@@ -26,7 +35,7 @@ export default function Projects() {
       link: "https://github.com/hari240706/scholarship-track-portal.git",
     },
     {
-      id: 3,
+      id: 4,
       title: "Resume Builder for Tier-2/Tier-3 Students",
       description: "A full-stack resume builder web application designed to help students from Tier-2/Tier-3 colleges easily create professional-looking resumes for jobs, internships, and hackathons.",
       tech: ["JavaScript", "Python", "Jinja2", "pdfkit + wkhtmltopdf"],
@@ -40,6 +49,7 @@ export default function Projects() {
     { id: "all", label: "All Projects" },
     { id: "fullstack", label: "Full Stack" },
     { id: "ai", label: "AI/ML" },
+    { id: "cybersecurity", label: "Cyber Security" },
   ];
 
   const filteredProjects = filter === "all" 
@@ -123,7 +133,7 @@ export default function Projects() {
 
           {/* Projects Grid */}
           <motion.div
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid md:grid-cols-2 gap-8"
             layout
           >
             {filteredProjects.map((project, index) => (

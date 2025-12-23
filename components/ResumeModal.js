@@ -49,7 +49,7 @@ export default function ResumeModal({ isOpen, onClose }) {
               <div className="space-y-4">
                 {/* View Resume */}
                 <motion.a
-                  href="/Resume.pdf"
+                  href="\Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full p-4 bg-gradient-to-r from-blue-600/20 to-purple-600/20 border-2 border-blue-500/50 rounded-xl hover:border-blue-500 transition-all duration-300 group"
