@@ -38,7 +38,7 @@ export default function Education() {
 
   const certifications = [
     {
-      title: "Soft Skill Development",
+      title: "Soft Skill Development, The Joy of Computing",
       platform: "NPTEL",
       year: "2024",
       icon: "🌐",
