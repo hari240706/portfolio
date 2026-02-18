@@ -27,6 +27,17 @@ export default function Skills() {
       ],
     },
     {
+      category: "Database Management",
+      icon: "🛢️",
+      color: "from-indigo-500 to-blue-600",
+      skills: [
+        { name: "MySQL", level: 80, icon: "🎛️" },
+        { name: "MongoDB", level: 75, icon: "📡" },
+        { name: "PostgreSQL", level: 70, icon: "⚡" },
+        { name: "Firebase", level: 65, icon: "🔌" },
+      ],
+    },
+    {
       category: "AI/ML & Data Science",
       icon: "🤖",
       color: "from-purple-500 to-pink-500",

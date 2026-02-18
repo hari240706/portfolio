@@ -11,7 +11,7 @@ export default function Education() {
       location: "Chennai, India",
       period: "2024 - 2028",
       current: true,
-      year: "2nd Year (3rd Semester)",
+      year: "2nd Year (4th Semester)",
       achievements: [
         "Active participant in hackathons and coding competitions",
         "Working on multiple full-stack and AI/ML projects",
