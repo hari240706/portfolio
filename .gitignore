@@ -39,3 +39,19 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# eslint cache
+.eslintcache
+
+# VS Code config (except settings)
+.vscode/*
+!.vscode/settings.json
+
+# OS files
+Thumbs.db
+desktop.ini
+
+# logs & diagnostics
+logs
+*.log
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json

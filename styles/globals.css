@@ -17,6 +17,7 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
+  overflow-x: hidden;
 }
 
 /* Show default cursor on mobile/touch devices */
@@ -39,16 +40,8 @@ body {
 html {
   scroll-behavior: smooth;
   height: 100%;
-}
-
-/* ==========================================
-   GRID BACKGROUND PATTERN
-   ========================================== */
-.bg-grid-pattern {
-  background-image: 
-    linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
-  background-size: 50px 50px;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* ==========================================
@@ -316,11 +309,24 @@ a, button, input, textarea, select {
   background-clip: text;
 }
 
-/* ==========================================
-   RESPONSIVE ADJUSTMENTS
-   ========================================== */
-@media (max-width: 768px) {
-  .bg-grid-pattern {
-    background-size: 30px 30px;
+/* Keyboard navigation focus outline */
+:focus-visible {
+  outline: 2px solid #3b82f6 !important;
+  outline-offset: 2px !important;
+}
+
+/* Smooth scrolling support while respecting user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  *, *::before, *::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
   }
 }

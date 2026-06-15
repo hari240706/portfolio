@@ -7,7 +7,7 @@ export default function ProjectCard({ title, description, link }) {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className="bg-white rounded-lg p-6 mb-6 shadow cursor-pointer"
+      className="bg-white rounded-lg p-6 mb-6 shadow cursor-none"
     >
       <h2 className="text-xl font-semibold mb-2">{title}</h2>
       <p className="mb-4 text-gray-600">{description}</p>

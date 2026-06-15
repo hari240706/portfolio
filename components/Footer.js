@@ -5,16 +5,34 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { name: "LinkedIn", icon: "💼", url: "https://www.linkedin.com/in/hariprasad-r-95096232a" },
-    { name: "Instagram", icon: "💻", url: "https://www.instagram.com/hari_24_07_06" },
-    { name: "X", icon: "🐦", url: "https://x.com/hari_24_07_06" },
-    { name: "Discord", icon: "👾", url: "https://discordapp.com/users/1368111848947449916" },
+    {
+      name: "LinkedIn",
+      icon: "💼",
+      url: "https://www.linkedin.com/in/hariprasad-r-95096232a"
+    },
+    {
+      name: "GitHub",
+      icon: "💻",
+      url: "https://github.com/hari240706"
+    },
+    {
+      name: "Instagram",
+      icon: "📸",
+      url: "https://www.instagram.com/hari_24_07_06"
+    },
+    {
+      name: "Discord",
+      icon: "👾",
+      url: "https://discordapp.com/users/1368111848947449916"
+    },
   ];
 
   const quickLinks = [
     { name: "Home", path: "/" },
-    { name: "Projects", path: "/projects" },
     { name: "About", path: "/about" },
+    { name: "Projects", path: "/projects" },
+    { name: "Skills", path: "/skills" },
+    { name: "Education", path: "/education" },
     { name: "Contact", path: "/contact" },
   ];
 
@@ -34,10 +52,11 @@ export default function Footer() {
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
       
-      <div className="container mx-auto px-6 py-16 relative z-10">
+      <div className="w-full px-4 md:px-12 lg:px-16 py-16 relative z-10">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Brand Section */}
           <motion.div
+            className="text-center md:text-left flex flex-col items-center md:items-start"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -53,14 +72,17 @@ export default function Footer() {
             >
               Hariprasad R
             </motion.h3>
-            <p className="text-gray-400 leading-relaxed mb-6">
-              Aspiring Software Developer passionate about creating innovative solutions with modern technologies.
+            <p className="text-cyan-400 font-semibold mb-3">
+              Application Security Engineer Aspirant
+            </p>
+            <p className="text-gray-400 leading-relaxed mb-6 max-w-md">
+              Aspiring Application Security Engineer focused on Secure Software Development, Cloud Security, and AI-driven Cybersecurity.
             </p>
             
             {/* Animated email */}
             <motion.a
               href="mailto:prghariprasad@gmail.com"
-              className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors group"
+              className="inline-flex items-center justify-center md:justify-start gap-2 text-blue-400 hover:text-blue-300 transition-colors group min-h-[44px]"
               whileHover={{ x: 5 }}
             >
               <span>📧</span>
@@ -73,22 +95,26 @@ export default function Footer() {
                 →
               </motion.span>
             </motion.a>
+            <div className="mt-4 text-gray-500 text-sm">
+              Open for Internships • Freelancing • Collaborations
+            </div>
           </motion.div>
 
           {/* Quick Links */}
           <motion.div
+            className="text-center md:text-left flex flex-col items-center md:items-start"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h4 className="text-xl font-bold text-white mb-6">Quick Links</h4>
-            <ul className="space-y-3">
+            <h4 className="text-xl font-bold text-white mb-6 w-full">Quick Links</h4>
+            <ul className="space-y-3 w-full flex flex-col items-center md:items-start">
               {quickLinks.map((link, index) => (
                 <li key={link.path}>
                   <Link href={link.path}>
                     <motion.div
-                      className="text-gray-400 hover:text-white transition-colors cursor-pointer flex items-center gap-2 group"
+                      className="text-gray-400 hover:text-white transition-colors cursor-none flex items-center justify-center md:justify-start gap-2 group min-h-[44px]"
                       whileHover={{ x: 5 }}
                       initial={{ opacity: 0, x: -10 }}
                       whileInView={{ opacity: 1, x: 0 }}
@@ -96,7 +122,7 @@ export default function Footer() {
                       transition={{ duration: 0.3, delay: index * 0.05 }}
                     >
                       <motion.span
-                        className="text-blue-500 opacity-0 group-hover:opacity-100"
+                        className="text-blue-500 opacity-0 group-hover:opacity-100 hidden md:inline"
                         initial={{ x: -5 }}
                         whileHover={{ x: 0 }}
                       >
@@ -112,6 +138,7 @@ export default function Footer() {
 
           {/* Social Links */}
           <motion.div
+            className="text-center md:text-left"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -125,7 +152,7 @@ export default function Footer() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-3 bg-white/5 rounded-xl border border-white/10 hover:border-blue-500/50 hover:bg-white/10 transition-all duration-300 group"
+                  className="flex items-center justify-center md:justify-start gap-3 p-3 bg-white/5 rounded-xl border border-white/10 hover:border-blue-500/50 hover:bg-white/10 transition-all duration-300 group min-h-[44px] h-full"
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}

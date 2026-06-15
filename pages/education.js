@@ -11,10 +11,12 @@ export default function Education() {
       location: "Chennai, India",
       period: "2024 - 2028",
       current: true,
-      year: "2nd Year (4th Semester)",
+      year: "3rd Year",
       achievements: [
-        "Active participant in hackathons and coding competitions",
-        "Working on multiple full-stack and AI/ML projects",
+        "Current CGPA: 7.59",
+        "Participated in 14 hackathons and innovation challenges",
+        "Developed AI, Cybersecurity, and Full-Stack projects",
+        "Tech Wing Member at GDG On Campus RMKEC",
       ],
       icon: "🎓",
       color: "from-blue-500 to-cyan-500",
@@ -27,64 +29,86 @@ export default function Education() {
       period: "2022 - 2024",
       current: false,
       achievements: [
+        "Completed Higher Secondary Education with 72%",
         "Strong foundation in Mathematics and Computer Science",
         "Developed early interest in programming",
-        "NCC 'A' Certificate holder and Bharath Scouts and Guides Tritiya Sopan Certificate holder",
       ],
       icon: "📚",
       color: "from-purple-500 to-pink-500",
+    },
+    {
+      id: 3,
+      degree: "Secondary School Education",
+      institution: "Shree Niketan Matriculation Higher Secondary School",
+      location: "Thiruvallur",
+      period: "2021 - 2022",
+      current: false,
+      achievements: [
+        "Completed SSLC with 77%",
+        "Built strong academic foundations",
+      ],
+      icon: "🏫",
+      color: "from-green-500 to-emerald-500",
     },
   ];
 
   const certifications = [
     {
-      title: "Soft Skill Development, The Joy of Computing",
-      platform: "NPTEL",
-      year: "2024",
-      icon: "🌐",
+      title: "Infosys Springboard Virtual Internship 6.0",
+      platform: "Artificial Intelligence",
+      year: "2025",
+      icon: "🤖",
     },
     {
-      title: "Programming in Python",
-      platform: "Sudharsanam IT Academy (P) Ltd",
+      title: "Programming in Python (A+ Grade)",
+      platform: "Sudharsanam IT Academy",
       year: "2024",
       icon: "🐍",
     },
     {
-      title: "Programming in C and C++",
-      platform: "Sudharsanam IT Academy (P) Ltd",
+      title: "Programming in C & C++ (A Grade)",
+      platform: "Sudharsanam IT Academy",
       year: "2024",
-      icon: "🔧",
+      icon: "💻",
     },
     {
-      title: "Generative AI Applications and Python Fundamentals",
-      platform: "GUVI Geek Network",
-      year: "2024",
-      icon: "📚",
+      title: "Graphic Designing Certification",
+      platform: "G-Tec Computer Education",
+      year: "2019",
+      icon: "🎨",
     },
     {
-      title: "Designing e-commerce website in Tamil",
-      platform: "GUVI Geek Network",
-      year: "2024",
-      icon: "📱",
+      title: "NCC 'A' Certificate",
+      platform: "National Cadet Corps",
+      year: "2021",
+      icon: "🪖",
     },
     {
-      title: "Various 30+ courses on topics like java, Ai/ML, DBMS, etc.",
-      platform: "Infosys Springboard",
-      year: "2024",
-      icon: "🚀",
+      title: "Tritiya Sopan Badge",
+      platform: "Bharat Scouts & Guides",
+      year: "2022",
+      icon: "⚜️",
+    },
+    {
+      title: "ISC2 Certified in Cybersecurity (CC)",
+      platform: "Currently Preparing",
+      year: "2026",
+      icon: "🔐",
     },
   ];
 
   const activities = [
     {
-      title: "Hackathon Participation",
-      description: "Participated in 4+ hackathons, developing innovative solutions",
+      title: "Hackathons & Innovation Challenges",
+      description:
+        "Participated in 14 hackathons and innovation challenges including Adobe India Hackathon, Smart India Hackathon 2025, IOB CyberNova Hackathon 2026, Tata Crucible Campus Quiz 2025, and more.",
       icon: "🏆",
     },
     {
-      title: "Team Projects",
-      description: "Collaborated with teams on full-stack and IoT projects",
-      icon: "👥",
+      title: "Technical Communities",
+      description:
+        "Contributing as a Tech Wing Member at GDG On Campus RMKEC and Tech Team Intern at Induskiller.",
+      icon: "🌐",
     },
   ];
 
@@ -92,8 +116,6 @@ export default function Education() {
     <>
       <Navbar />
       <div className="min-h-screen bg-black relative overflow-x-hidden pt-24 pb-20">
-        {/* Background Effects */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
         
         <motion.div
           className="absolute top-20 right-20 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"
@@ -113,16 +135,16 @@ export default function Education() {
           transition={{ duration: 10, repeat: Infinity }}
         />
 
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="w-full px-4 md:px-12 lg:px-16 relative z-10">
           {/* Header */}
           <motion.div
             className="text-center mb-16"
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
             <motion.h1
-              className="text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 mb-6"
+              className="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 mb-6 pb-2"
               animate={{
                 backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
               }}
@@ -131,21 +153,47 @@ export default function Education() {
             >
               Education
             </motion.h1>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              My academic journey and continuous learning path
+            <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
+              My academic journey, certifications, internships, technical communities,
+              and milestones shaping my path toward AI and Cybersecurity.
             </p>
           </motion.div>
 
+          {/* Education Stats */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16 md:mb-20">
+            <div className="text-center p-6 rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-center h-full">
+              <div className="text-3xl sm:text-4xl font-bold text-blue-400">7.59</div>
+              <p className="text-gray-400 text-sm">Current CGPA</p>
+            </div>
+
+            <div className="text-center p-6 rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-center h-full">
+              <div className="text-3xl sm:text-4xl font-bold text-cyan-400">7</div>
+              <p className="text-gray-400 text-sm">Internships</p>
+            </div>
+
+            <div className="text-center p-6 rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-center h-full">
+              <div className="text-3xl sm:text-4xl font-bold text-purple-400">14</div>
+              <p className="text-gray-400 text-sm">Hackathons</p>
+            </div>
+
+            <div className="text-center p-6 rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-center h-full">
+              <div className="text-3xl sm:text-4xl font-bold text-green-400">6</div>
+              <p className="text-gray-400 text-sm">Certifications</p>
+            </div>
+          </div>
+
           {/* Education Timeline */}
-          <div className="max-w-4xl mx-auto mb-20">
+          <div className="w-full mx-auto mb-16 md:mb-20">
             <motion.h2
-              className="text-3xl md:text-4xl font-bold text-white mb-12 flex items-center gap-3"
-              initial={{ opacity: 0, x: -50 }}
+              className="text-3xl md:text-4xl font-bold mb-12 text-center leading-relaxed"
+              initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <span className="text-4xl">🎓</span>
-              Academic Background
+              <span className="text-4xl mr-2">🎓</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500 pb-2 inline-block">
+                Academic Background
+              </span>
             </motion.h2>
 
             <div className="space-y-8">
@@ -153,12 +201,12 @@ export default function Education() {
                 <motion.div
                   key={edu.id}
                   className="relative"
-                  initial={{ opacity: 0, x: -50 }}
+                  initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <div className="relative p-8 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-2xl border border-white/10 hover:border-blue-500/50 transition-all duration-300 group overflow-hidden">
+                  <div className="relative p-6 md:p-8 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-2xl border border-white/10 hover:border-blue-500/50 transition-all duration-300 group overflow-hidden">
                     {/* Animated Background */}
                     <motion.div
                       className={`absolute inset-0 bg-gradient-to-br ${edu.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
@@ -167,7 +215,7 @@ export default function Education() {
                     {/* Current Badge */}
                     {edu.current && (
                       <motion.div
-                        className="absolute top-4 right-4 px-4 py-2 bg-green-500/20 border border-green-500/50 rounded-full flex items-center gap-2"
+                        className="absolute top-4 right-4 px-4 py-2 bg-green-500/20 border border-green-500/50 rounded-full flex items-center gap-2 z-20"
                         animate={{ opacity: [0.5, 1, 0.5] }}
                         transition={{ duration: 2, repeat: Infinity }}
                       >
@@ -177,29 +225,29 @@ export default function Education() {
                     )}
 
                     <div className="relative z-10">
-                      <div className="flex items-start gap-6 mb-6">
+                      <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 mb-6 text-center sm:text-left">
                         <motion.div
-                          className={`text-6xl p-4 bg-gradient-to-br ${edu.color} rounded-2xl`}
+                          className={`text-5xl sm:text-6xl p-3 sm:p-4 bg-gradient-to-br ${edu.color} rounded-2xl flex-shrink-0`}
                           whileHover={{ rotate: 360, scale: 1.1 }}
                           transition={{ duration: 0.6 }}
                         >
                           {edu.icon}
                         </motion.div>
                         
-                        <div className="flex-1">
-                          <h3 className={`text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${edu.color} mb-2`}>
+                        <div className="flex-1 w-full">
+                          <h3 className={`text-xl sm:text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${edu.color} mb-2`}>
                             {edu.degree}
                           </h3>
-                          <p className="text-xl text-white font-semibold mb-1">
+                          <p className="text-lg sm:text-xl text-white font-semibold mb-1">
                             {edu.institution}
                           </p>
-                          <p className="text-gray-400 mb-2">📍 {edu.location}</p>
-                          <div className="flex flex-wrap gap-3 text-sm">
-                            <span className={`px-4 py-2 bg-gradient-to-r ${edu.color} rounded-full font-bold text-white shadow-lg`}>
+                          <p className="text-gray-400 mb-2 text-sm sm:text-base">📍 {edu.location}</p>
+                          <div className="flex flex-wrap gap-2 justify-center sm:justify-start text-sm">
+                            <span className={`px-4 py-2 bg-gradient-to-r ${edu.color} rounded-full font-bold text-white shadow-lg text-xs sm:text-sm`}>
                               {edu.period}
                             </span>
                             {edu.year && (
-                              <span className="px-4 py-2 bg-blue-500/30 border border-blue-500/50 rounded-full text-blue-300 font-semibold">
+                              <span className="px-4 py-2 bg-blue-500/30 border border-blue-500/50 rounded-full text-blue-300 font-semibold text-xs sm:text-sm">
                                 {edu.year}
                               </span>
                             )}
@@ -208,15 +256,15 @@ export default function Education() {
                       </div>
 
                       {/* Achievements */}
-                      <div className="space-y-2">
+                      <div className="space-y-2 mt-4 text-left">
                         {edu.achievements.map((achievement, i) => (
                           <motion.div
                             key={i}
-                            className="flex items-start gap-3 text-gray-400"
-                            initial={{ opacity: 0, x: -20 }}
+                            className="flex items-start gap-3 text-gray-400 text-sm sm:text-base"
+                            initial={{ opacity: 0, x: -10 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: i * 0.1 }}
+                            transition={{ delay: i * 0.05 }}
                           >
                             <span className="text-blue-400 mt-1">✓</span>
                             <span>{achievement}</span>
@@ -231,76 +279,329 @@ export default function Education() {
           </div>
 
           {/* Certifications */}
-          <div className="max-w-6xl mx-auto mb-20">
+          <div className="w-full mx-auto mb-16 md:mb-20">
             <motion.h2
-              className="text-3xl md:text-4xl font-bold text-white mb-12 flex items-center gap-3"
-              initial={{ opacity: 0, x: -50 }}
+              className="text-3xl md:text-4xl font-bold mb-12 text-center leading-relaxed"
+              initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <span className="text-4xl">📜</span>
-              Certifications & Courses
+              <span className="text-4xl mr-2">📜</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 pb-2 inline-block">
+                Certifications & Courses
+              </span>
             </motion.h2>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {certifications.map((cert, index) => (
                 <motion.div
                   key={index}
                   className="group"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ y: -10 }}
+                  transition={{ duration: 0.5, delay: index * 0.05 }}
+                  whileHover={{ y: -6 }}
                 >
-                  <div className="relative p-6 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-2xl border border-white/10 hover:border-purple-500/50 transition-all duration-300 h-full">
-                    <div className="text-5xl mb-4">{cert.icon}</div>
-                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 transition-all duration-300">
-                      {cert.title}
-                    </h3>
-                    <p className="text-sm text-gray-400 mb-2">{cert.platform}</p>
-                    <span className="text-xs text-blue-400 font-semibold">{cert.year}</span>
+                  <div className="relative p-6 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-2xl border border-white/10 hover:border-purple-500/50 transition-all duration-300 h-full flex flex-col justify-between">
+                    <div>
+                      <div className="text-5xl mb-4">{cert.icon}</div>
+                      <h3 className="text-lg font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 transition-all duration-300">
+                        {cert.title}
+                      </h3>
+                      <p className="text-sm text-gray-400 mb-2">{cert.platform}</p>
+                    </div>
+                    <span className="text-xs text-blue-400 font-semibold mt-2">{cert.year}</span>
                   </div>
                 </motion.div>
               ))}
             </div>
           </div>
 
-          {/* Extracurricular Activities */}
-          <div className="max-w-6xl mx-auto">
+          {/* Current Learning Roadmap */}
+          <div className="w-full mx-auto mb-16 md:mb-20">
             <motion.h2
-              className="text-3xl md:text-4xl font-bold text-white mb-12 flex items-center gap-3"
-              initial={{ opacity: 0, x: -50 }}
+              className="text-3xl md:text-4xl font-bold mb-12 text-center leading-relaxed"
+              initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <span className="text-4xl">⚡</span>
-              Activities & Involvement
+              <span className="text-4xl mr-2">🎯</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-emerald-500 pb-2 inline-block">
+                Current Learning Roadmap
+              </span>
             </motion.h2>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {[
+                { icon: "🛡️", title: "Application Security" },
+                { icon: "☁️", title: "Cloud Security" },
+                { icon: "🔐", title: "ISC2 Certified in Cybersecurity" },
+                { icon: "🐧", title: "Linux Administration" },
+                { icon: "🐳", title: "Docker & Kubernetes" },
+                { icon: "🤖", title: "AI for Security" },
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  whileHover={{ y: -5 }}
+                  className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-500/50 transition-all duration-300 text-center flex flex-col justify-center items-center h-full"
+                >
+                  <div className="flex flex-col items-center gap-3">
+                    <div className="text-5xl">
+                      {item.icon}
+                    </div>
+                    <h3 className="text-lg font-semibold text-cyan-400 text-sm sm:text-base">
+                      {item.title}
+                    </h3>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Achievements & Leadership */}
+          <div className="w-full mx-auto mb-16 md:mb-20">
+            <motion.h2
+              className="text-3xl md:text-4xl font-bold mb-12 text-center leading-relaxed"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-4xl mr-2">🏅</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-rose-500 pb-2 inline-block">
+                Achievements & Leadership
+              </span>
+            </motion.h2>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                {
+                  icon: "🪖",
+                  title: "NCC 'A' Certificate",
+                },
+                {
+                  icon: "⚜️",
+                  title: "Tritiya Sopan Badge",
+                },
+                {
+                  icon: "🌐",
+                  title: "GDG Tech Wing",
+                },
+                {
+                  icon: "💻",
+                  title: "Induskiller Intern",
+                },
+                {
+                  icon: "🛡️",
+                  title: "Cybersecurity Projects",
+                },
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  whileHover={{ y: -5 }}
+                  className="p-6 rounded-2xl bg-white/5 border border-white/10 text-center flex flex-col justify-center items-center h-full"
+                >
+                  <div className="text-5xl mb-4">
+                    {item.icon}
+                  </div>
+                  <h3 className="font-semibold text-purple-400 text-sm sm:text-base">
+                    {item.title}
+                  </h3>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Internship Journey */}
+          <div className="w-full mx-auto mb-16 md:mb-20">
+            <motion.h2
+              className="text-3xl md:text-4xl font-bold mb-12 text-center leading-relaxed"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-4xl mr-2">💼</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-purple-500 pb-2 inline-block">
+                Internship Journey
+              </span>
+            </motion.h2>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  company: "CodSoft",
+                  role: "C++ Programming Intern",
+                  duration: "2024",
+                  icon: "💻",
+                },
+                {
+                  company: "CodeBind Technologies",
+                  role: "Web Development Intern",
+                  duration: "2025",
+                  icon: "🌐",
+                },
+                {
+                  company: "Arttifai Tech",
+                  role: "Java Programming Intern",
+                  duration: "2025",
+                  icon: "☕",
+                },
+                {
+                  company: "AD Infocom Systems",
+                  role: "Cybersecurity Intern",
+                  duration: "2026",
+                  icon: "🛡️",
+                },
+                {
+                  company: "Infosys Springboard Virtual Internship 6.0",
+                  role: "Artificial Intelligence Intern",
+                  duration: "2026",
+                  icon: "🤖",
+                },
+                {
+                  company: "Induskiller",
+                  role: "Tech Team Intern",
+                  duration: "2026",
+                  icon: "⚙️",
+                },
+                {
+                  company: "LTI Technology",
+                  role: "Software Developer Intern",
+                  duration: "2026",
+                  icon: "🚀",
+                },
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  whileHover={{ y: -5 }}
+                  className="p-6 rounded-2xl bg-white/5 border border-white/10 text-center flex flex-col justify-between h-full"
+                >
+                  <div>
+                    <div className="text-5xl mb-4">
+                      {item.icon}
+                    </div>
+                    <h3 className="font-bold text-white mb-2">
+                      {item.company}
+                    </h3>
+                  </div>
+                  <div>
+                    <p className="text-gray-400 text-sm">
+                      {item.role}
+                    </p>
+                    <p className="text-blue-400 text-xs mt-2 font-semibold">
+                      {item.duration}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        
+          {/* Academic & Innovation Projects */}
+          <div className="w-full mx-auto mb-16 md:mb-20">
+            <motion.h2
+              className="text-3xl md:text-4xl font-bold mb-12 text-center leading-relaxed"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-4xl mr-2">🚀</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-red-500 pb-2 inline-block">
+                Academic & Innovation Projects
+              </span>
+            </motion.h2>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  name: "AMATIS",
+                  type: "AI + Cybersecurity",
+                  icon: "🤖",
+                },
+                {
+                  name: "TrustLens AI",
+                  type: "Website Threat Detection",
+                  icon: "🛡️",
+                },
+                {
+                  name: "Sentinel Log Watch",
+                  type: "Offline SIEM",
+                  icon: "📊",
+                },
+                {
+                  name: "Scholarship Track Portal",
+                  type: "Full Stack Web App",
+                  icon: "🎓",
+                },
+                {
+                  name: "Urban Energy Optimization",
+                  type: "Smart City Solution",
+                  icon: "🌍",
+                },
+                {
+                  name: "AI Resume Builder",
+                  type: "Generative AI",
+                  icon: "📄",
+                },
+              ].map((project, index) => (
+                <motion.div
+                  key={index}
+                  whileHover={{ y: -5 }}
+                  className="p-6 rounded-2xl bg-white/5 border border-white/10 text-center flex flex-col justify-between h-full group"
+                >
+                  <div>
+                    <div className="text-5xl mb-4">
+                      {project.icon}
+                    </div>
+                    <h3 className="font-bold text-white text-lg mb-2">
+                      {project.name}
+                    </h3>
+                  </div>
+                  <p className="text-sm text-gray-400 mt-2">
+                    {project.type}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Communities & Hackathons */}
+          <div className="w-full mb-16 md:mb-20">
+            <motion.h2
+              className="text-3xl md:text-4xl font-bold mb-12 text-center leading-relaxed"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-4xl mr-2">🌐</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-violet-500 pb-2 inline-block">
+                Communities & Hackathons
+              </span>
+            </motion.h2>
+
+            <div className="grid sm:grid-cols-2 gap-6">
               {activities.map((activity, index) => (
                 <motion.div
                   key={index}
                   className="group"
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ x: 10 }}
+                  transition={{ duration: 0.5, delay: index * 0.05 }}
+                  whileHover={{ x: 5 }}
                 >
-                  <div className="relative p-6 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-2xl border border-white/10 hover:border-cyan-500/50 transition-all duration-300 h-full overflow-hidden">
+                  <div className="relative p-6 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-2xl border border-white/10 hover:border-cyan-500/50 transition-all duration-300 h-full overflow-hidden flex flex-col justify-between">
                     <motion.div
                       className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     />
                     
-                    <div className="relative z-10 flex items-start gap-4">
-                      <div className="text-4xl">{activity.icon}</div>
+                    <div className="relative z-10 flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left h-full">
+                      <div className="text-4xl flex-shrink-0">{activity.icon}</div>
                       <div>
                         <h3 className="text-xl font-bold text-white mb-2">
                           {activity.title}
                         </h3>
-                        <p className="text-gray-400 leading-relaxed">
+                        <p className="text-gray-400 leading-relaxed text-sm">
                           {activity.description}
                         </p>
                       </div>
@@ -310,6 +611,93 @@ export default function Education() {
               ))}
             </div>
           </div>
+
+          {/* Highlights */}
+          <div className="w-full mx-auto mt-12 mb-16">
+            <motion.h2
+              className="text-3xl md:text-4xl font-bold mb-12 text-center leading-relaxed"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-4xl mr-2">🏆</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-teal-500 pb-2 inline-block">
+                Highlights
+              </span>
+            </motion.h2>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  icon: "🚀",
+                  title: "7 Internships",
+                  desc: "Across Software Development, Cybersecurity, Web, Java, and C++",
+                },
+                {
+                  icon: "🌐",
+                  title: "GDG Tech Wing",
+                  desc: "Active member of GDG On Campus RMKEC",
+                },
+                {
+                  icon: "💻",
+                  title: "Induskiller",
+                  desc: "Tech Team Intern",
+                },
+                {
+                  icon: "🏆",
+                  title: "13+ Hackathons",
+                  desc: "Hackathons, Innovation Challenges, and Competitions",
+                },
+                {
+                  icon: "🤖",
+                  title: "AI + Cybersecurity",
+                  desc: "Focused on AI for Security and Secure Systems",
+                },
+                {
+                  icon: "🔐",
+                  title: "ISC2 CC",
+                  desc: "Preparing for Certified in Cybersecurity",
+                },
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.05 }}
+                  whileHover={{ y: -6 }}
+                  className="p-6 rounded-2xl bg-white/5 border border-white/10 text-center flex flex-col justify-between h-full group"
+                >
+                  <div>
+                    <div className="text-5xl mb-4">
+                      {item.icon}
+                    </div>
+
+                    <h3 className="text-xl font-bold text-white mb-2">
+                      {item.title}
+                    </h3>
+                  </div>
+
+                  <p className="text-gray-400 text-sm mt-2">
+                    {item.desc}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Career Objective */}
+          <div className="max-w-5xl mx-auto mt-20 pb-8 px-4">
+            <div className="p-8 md:p-10 rounded-3xl bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-cyan-500/10 border border-white/10">
+              <h2 className="text-2xl sm:text-3xl font-bold text-center text-white mb-6">
+                🎯 Career Objective
+              </h2>
+              <p className="text-center text-base sm:text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
+                My goal is to become an Application Security Engineer while building expertise in Cloud Security and AI-driven Cybersecurity. Through hands-on projects, internships, certifications, hackathons, and community leadership, I aim to contribute to secure and intelligent software systems by the time I graduate in 2028.
+              </p>
+            </div>
+          </div>
+
         </div>
       </div>
       <Footer />

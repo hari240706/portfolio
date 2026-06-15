@@ -8,8 +8,10 @@ function MyApp({ Component, pageProps }) {
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
   const [cursorVariant, setCursorVariant] = useState("default");
   const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     // Detect if device supports touch (mobile/tablet)
     const checkTouchDevice = () => {
       const hasTouch = 'ontouchstart' in window || 
@@ -114,7 +116,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       {/* Custom Cursor - Only show on desktop (non-touch devices) */}
-      {!isTouchDevice && (
+      {mounted && !isTouchDevice && (
         <>
           <motion.div
             className="custom-cursor-main"
