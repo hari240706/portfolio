@@ -89,7 +89,7 @@ export default function Navbar() {
               {/* Logo - Always Left-aligned */}
               <Link href="/" className="z-10 flex items-center">
                 <motion.div
-                  className="flex items-center cursor-none"
+                  className="flex items-center cursor-pointer"
                   whileHover={{ scale: 1.05 }}
                 >
                   <div className="relative">
@@ -113,7 +113,7 @@ export default function Navbar() {
                   return (
                     <Link key={item.path} href={item.path}>
                       <motion.div
-                        className="relative group px-4 py-2 cursor-none"
+                        className="relative group px-4 py-2 cursor-pointer"
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}

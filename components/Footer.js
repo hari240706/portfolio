@@ -108,28 +108,24 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h4 className="text-xl font-bold text-white mb-6 w-full">Quick Links</h4>
+            <h4 className="text-xl font-bold text-white mb-6 w-full">
+              Quick Links
+            </h4>
+
             <ul className="space-y-3 w-full flex flex-col items-center md:items-start">
-              {quickLinks.map((link, index) => (
+              {quickLinks.map((link) => (
                 <li key={link.path}>
-                  <Link href={link.path}>
-                    <motion.div
-                      className="text-gray-400 hover:text-white transition-colors cursor-none flex items-center justify-center md:justify-start gap-2 group min-h-[44px]"
-                      whileHover={{ x: 5 }}
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.3, delay: index * 0.05 }}
-                    >
-                      <motion.span
-                        className="text-blue-500 opacity-0 group-hover:opacity-100 hidden md:inline"
-                        initial={{ x: -5 }}
-                        whileHover={{ x: 0 }}
-                      >
-                        →
-                      </motion.span>
+                  <Link
+                    href={link.path}
+                    className="text-gray-400 hover:text-white transition-colors flex items-center justify-center md:justify-start gap-2 group min-h-[44px]"
+                  >
+                    <span className="text-blue-500 opacity-0 group-hover:opacity-100 hidden md:inline transition-opacity">
+                      →
+                    </span>
+
+                    <span className="hover:translate-x-1 transition-transform duration-200">
                       {link.name}
-                    </motion.div>
+                    </span>
                   </Link>
                 </li>
               ))}
