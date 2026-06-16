@@ -59,8 +59,17 @@ export default function Navbar() {
 
   // Close mobile menu on route change
   useEffect(() => {
-    setIsMobileMenuOpen(false);
-  }, [router.asPath]);
+    const handleRouteChange = () => {
+      setIsMobileMenuOpen(false);
+      document.body.style.overflow = "";
+    };
+
+    router.events.on("routeChangeStart", handleRouteChange);
+
+    return () => {
+      router.events.off("routeChangeStart", handleRouteChange);
+    };
+  }, [router]);
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -111,7 +120,14 @@ export default function Navbar() {
                 {navItems.map((item, index) => {
                   const isActive = router.pathname === item.path;
                   return (
-                    <Link key={item.path} href={item.path}>
+                    <Link
+                      key={item.path}
+                      href={item.path}
+                      onClick={() => {
+                        setIsMobileMenuOpen(false);
+                        document.body.style.overflow = "";
+                      }}
+                    >
                       <motion.div
                         className="relative group px-4 py-2 cursor-pointer"
                         initial={{ opacity: 0, y: -20 }}
@@ -239,7 +255,14 @@ export default function Navbar() {
               {navItems.map((item, index) => {
                 const isActive = router.pathname === item.path;
                 return (
-                  <Link key={item.path} href={item.path}>
+                  <Link
+                    key={item.path}
+                    href={item.path}
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      document.body.style.overflow = "";
+                    }}
+                  >
                     <motion.div
                       className="text-center"
                       initial={{ opacity: 0, y: 20 }}
