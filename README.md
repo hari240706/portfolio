@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌐 Hariprasad R — Personal Website
 
-## Getting Started
+This repository contains the source code for my personal website and portfolio.
 
-First, run the development server:
+The website showcases my projects, technical skills, certifications, internships, achievements, and journey in Cybersecurity, Artificial Intelligence, and Software Development.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 About
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+I am **Hariprasad R**, a Computer Science and Engineering student passionate about:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* 🛡️ Cybersecurity
+* 🤖 Artificial Intelligence
+* 🔐 Application Security
+* ☁️ Cloud Security
+* 💻 Software Development
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This website serves as a central hub for my professional profile, technical projects, certifications, internship experiences, and contact information.
 
-## Learn More
+## 🛠️ Built With
 
-To learn more about Next.js, take a look at the following resources:
+* Next.js
+* React
+* Tailwind CSS
+* Framer Motion
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ✨ Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* Responsive Design
+* Modern Cybersecurity & AI Theme
+* Interactive Animations
+* Project Showcase
+* Skills & Technologies
+* Education Timeline
+* Certifications Gallery
+* Internship Experience
+* Resume Preview & Download
+* Contact Page
 
-## Deploy on Vercel
+## 🌍 Live Website
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+https://hariprasadportfolio-omega.vercel.app/
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📫 Connect With Me
+
+* LinkedIn: https://linkedin.com/in/hariprasad-r-95096232a
+* GitHub: https://github.com/hari240706
+* LeetCode: https://leetcode.com/u/hariprasad24
+* HackerRank: https://www.hackerrank.com/profile/hariprasad24
+
+---
+
+### Thank You for Visiting
+
+Thank you for taking the time to explore my portfolio. I am always open to connecting with professionals, recruiters, developers, and cybersecurity enthusiasts.
+
+Feel free to reach out for collaborations, internships, projects, or networking opportunities.
+
+---
+
+© 2026 Hariprasad R. All Rights Reserved.

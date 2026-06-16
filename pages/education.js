@@ -79,8 +79,8 @@ export default function Education() {
       title: "Graphic Designing Certification",
       platform: "G-Tec Computer Education",
       year: "2019",
-      preview: "/certificate-previews/GTec-Graphic-Designing-Certificate.jpg",
-      pdf: "/certificates/GTec-Graphic-Designing-Certificate.pdf",
+      preview: "/certificate-previews/GTEC-Graphic-Designing-Certificate.jpg",
+      pdf: "/certificates/GTEC-Graphic-Designing-Certificate.pdf",
       icon: "🎨",
     },
     {
