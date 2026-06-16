@@ -1,8 +1,14 @@
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { useState } from "react";
+import CertificateModal from "../components/CertificateModal";
 
 export default function Education() {
+  const [selectedCertificate, setSelectedCertificate] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedGallery, setSelectedGallery] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const education = [
     {
       id: 1,
@@ -54,39 +60,43 @@ export default function Education() {
 
   const certifications = [
     {
-      title: "Infosys Springboard Virtual Internship 6.0",
-      platform: "Artificial Intelligence",
-      year: "2025",
-      icon: "🤖",
-    },
-    {
       title: "Programming in Python (A+ Grade)",
       platform: "Sudharsanam IT Academy",
       year: "2024",
+      preview: "/certificate-previews/NIIT-Programming-in-Python.jpg",
+      pdf: "/certificates/NIIT-Programming-in-Python.pdf",
       icon: "🐍",
     },
     {
       title: "Programming in C & C++ (A Grade)",
       platform: "Sudharsanam IT Academy",
       year: "2024",
+      preview: "/certificate-previews/NIIT-Programming-in-C-and-C++.jpg",
+      pdf: "/certificates/NIIT-Programming-in-C-and-C++.pdf",
       icon: "💻",
     },
     {
       title: "Graphic Designing Certification",
       platform: "G-Tec Computer Education",
       year: "2019",
+      preview: "/certificate-previews/GTec-Graphic-Designing-Certificate.jpg",
+      pdf: "/certificates/GTec-Graphic-Designing-Certificate.pdf",
       icon: "🎨",
     },
     {
       title: "NCC 'A' Certificate",
       platform: "National Cadet Corps",
       year: "2021",
+      preview: "/certificate-previews/NCC-'A'-Certificate.jpg",
+      pdf: "/certificates/NCC-'A'-Certificate.pdf",
       icon: "🪖",
     },
     {
       title: "Tritiya Sopan Badge",
       platform: "Bharat Scouts & Guides",
       year: "2022",
+      preview: "/certificate-previews/BSG-Tritiya-Sopan-Certificate.jpg",
+      pdf: "/certificates/BSG-Tritiya-Sopan-Certificate.pdf",
       icon: "⚜️",
     },
     {
@@ -109,6 +119,52 @@ export default function Education() {
       description:
         "Contributing as a Tech Wing Member at GDG On Campus RMKEC and Tech Team Intern at Induskiller.",
       icon: "🌐",
+    },
+  ];
+
+  const nptelCertificates = [
+    {
+      title: "Soft Skill Development",
+      preview: "/certificate-previews/NPTEL-Soft-Skill-Development.jpg",
+      pdf: "/certificates/NPTEL-Soft-Skill-Development.pdf",
+    },
+    {
+      title: "The Joy of Computing Using Python",
+      preview: "/certificate-previews/NPTEL-The-Joy-of-Computing-using-Python.jpg",
+      pdf: "/certificates/NPTEL-The-Joy-of-Computing-using-Python.pdf",
+    },
+    {
+      title: "Introduction to Internet of Things",
+      preview: "/certificate-previews/NPTEL-Introduction-To-Internet-Of-Things.jpg",
+      pdf: "/certificates/NPTEL-Introduction-To-Internet-Of-Things.pdf",
+    },
+  ];
+
+  const ramanujanCertificates = [
+    {
+      title: "2024 Level 1",
+      preview: "/certificate-previews/National-Level-Srinivasa-Ramanujan-Mathematical-Competitions-2024-Level-1.jpg",
+      pdf: "/certificates/National-Level-Srinivasa-Ramanujan-Mathematical-Competitions-2024-Level-1.pdf",
+    },
+    {
+      title: "2024 Level 2",
+      preview: "/certificate-previews/National-Level-Srinivasa-Ramanujan-Mathematical-Competitions-2024-Level-2.jpg",
+      pdf: "/certificates/National-Level-Srinivasa-Ramanujan-Mathematical-Competitions-2024-Level-2.pdf",
+    },
+    {
+      title: "2026 Level 1",
+      preview: "/certificate-previews/National-Level-Srinivasa-Ramanujan-Mathematical-Competitions-2025-26-Level-1.jpg",
+      pdf: "/certificates/National-Level-Srinivasa-Ramanujan-Mathematical-Competitions-2025-26-Level-1.pdf",
+    },
+    {
+      title: "2026 Level 2",
+      preview: "/certificate-previews/National-Level-Srinivasa-Ramanujan-Mathematical-Competitions-2025-26-Level-2.jpg",
+      pdf: "/certificates/National-Level-Srinivasa-Ramanujan-Mathematical-Competitions-2025-26-Level-2.pdf",
+    },
+    {
+      title: "2026 Level 3",
+      preview: "/certificate-previews/National-Level-Srinivasa-Ramanujan-Mathematical-Competitions-2025-26-Level-3.jpg",
+      pdf: "/certificates/National-Level-Srinivasa-Ramanujan-Mathematical-Competitions-2025-26-Level-3.pdf",
     },
   ];
 
@@ -296,6 +352,10 @@ export default function Education() {
               {certifications.map((cert, index) => (
                 <motion.div
                   key={index}
+                  onClick={() => {
+                    setSelectedCertificate(cert);
+                    setModalOpen(true);
+                  }}
                   className="group"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -378,18 +438,26 @@ export default function Education() {
                 {
                   icon: "🪖",
                   title: "NCC 'A' Certificate",
+                  preview: "/certificate-previews/NCC-'A'-Certificate.jpg",
+                  pdf: "/certificates/NCC-'A'-Certificate.pdf",
                 },
                 {
                   icon: "⚜️",
                   title: "Tritiya Sopan Badge",
+                  preview: "/certificate-previews/BSG-Tritiya-Sopan-Certificate.jpg",
+                  pdf: "/certificates/BSG-Tritiya-Sopan-Certificate.pdf",
                 },
                 {
                   icon: "🌐",
                   title: "GDG Tech Wing",
+                  preview: "/certificate-previews/GDG-RMKEC-Tech-Wing.jpg",
+                  pdf: "/certificates/GDG-RMKEC-Tech-Wing.pdf",
                 },
                 {
                   icon: "💻",
                   title: "Induskiller Intern",
+                  preview: "/certificate-previews/Induskiller-Intern.jpg",
+                  pdf: "/certificates/Induskiller-Intern.pdf",
                 },
                 {
                   icon: "🛡️",
@@ -399,7 +467,21 @@ export default function Education() {
                 <motion.div
                   key={index}
                   whileHover={{ y: -5 }}
-                  className="p-6 rounded-2xl bg-white/5 border border-white/10 text-center flex flex-col justify-center items-center h-full"
+                  onClick={() => {
+                    if (item.pdf) {
+                      setSelectedCertificate({
+                        title: item.title,
+                        preview: item.preview,
+                        pdf: item.pdf,
+                      });
+                      setModalOpen(true);
+                    }
+                  }}
+                    className={`p-6 rounded-2xl bg-white/5 border border-white/10 text-center flex flex-col justify-center items-center h-full ${
+                      item.pdf
+                        ? "cursor-pointer hover:border-cyan-500/50"
+                        : ""
+                    }`}
                 >
                   <div className="text-5xl mb-4">
                     {item.icon}
@@ -433,47 +515,69 @@ export default function Education() {
                   role: "C++ Programming Intern",
                   duration: "2024",
                   icon: "💻",
+                  preview: "/certificate-previews/CodSoft-Intern.jpg",
+                  pdf: "/certificates/CodSoft-Intern.pdf",
                 },
                 {
                   company: "CodeBind Technologies",
                   role: "Web Development Intern",
                   duration: "2025",
                   icon: "🌐",
+                  preview: "/certificate-previews/CodeBind-Technologies-Intern.jpg",
+                  pdf: "/certificates/CodeBind-Technologies-Intern.pdf",
                 },
                 {
                   company: "Arttifai Tech",
                   role: "Java Programming Intern",
                   duration: "2025",
                   icon: "☕",
+                  preview: "/certificate-previews/Arttifai-Tech-Intern.jpg",
+                  pdf: "/certificates/Arttifai-Tech-Intern.pdf",
                 },
                 {
                   company: "AD Infocom Systems",
                   role: "Cybersecurity Intern",
                   duration: "2026",
                   icon: "🛡️",
+                  preview: "/certificate-previews/AD-Infocom-Systems-Intern.jpg",
+                  pdf: "/certificates/AD-Infocom-Systems-Intern.pdf",
                 },
                 {
                   company: "Infosys Springboard Virtual Internship 6.0",
                   role: "Artificial Intelligence Intern",
                   duration: "2026",
                   icon: "🤖",
+                  preview: "/certificate-previews/Infosys-Springboard-Internship-6.0.jpg",
+                  pdf: "/certificates/Infosys-Springboard-Internship-6.0.pdf",
                 },
                 {
                   company: "Induskiller",
                   role: "Tech Team Intern",
                   duration: "2026",
                   icon: "⚙️",
+                  preview: "/certificate-previews/Induskiller-Intern.jpg",
+                  pdf: "/certificates/Induskiller-Intern.pdf",
                 },
                 {
                   company: "LTI Technology",
                   role: "Software Developer Intern",
                   duration: "2026",
                   icon: "🚀",
+                  preview: "/certificate-previews/LTI-Tech-Intern.jpg",
+                  pdf: "/certificates/LTI-Tech-Intern.pdf",
                 },
               ].map((item, index) => (
                 <motion.div
                   key={index}
                   whileHover={{ y: -5 }}
+                  onClick={() => {
+                    setSelectedCertificate({
+                      title: item.company,
+                      preview: item.preview,
+                      pdf: item.pdf,
+                    });
+                    setModalOpen(true);
+                  }}
                   className="p-6 rounded-2xl bg-white/5 border border-white/10 text-center flex flex-col justify-between h-full"
                 >
                   <div>
@@ -612,6 +716,102 @@ export default function Education() {
             </div>
           </div>
 
+          {/* Achievements & Recognition */}
+
+          <div className="mb-20">
+
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+              <span className="mr-2">🏆</span>
+
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-indigo-500">
+                Achievements & Recognition
+              </span>
+            </h2>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+              {/* NPTEL Certifications */}
+
+              <motion.div
+                whileHover={{ y: -8 }}
+                onClick={() => {
+                  setSelectedGallery(nptelCertificates);
+                  setCurrentIndex(0);
+
+                  setSelectedCertificate(nptelCertificates[0]);
+                  setModalOpen(true);
+                }}
+                className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-yellow-500/50 transition-all duration-300"
+              >
+                <div className="text-5xl mb-4">🎓</div>
+
+                <h3 className="text-xl font-bold text-white-400 mb-3">
+                  NPTEL Certifications
+                </h3>
+
+                <ul className="text-gray-400 space-y-2 text-sm">
+                  <li>⭐ Soft Skill Development (Elite)</li>
+                  <li>⭐ The Joy of Computing Using Python (Elite)</li>
+                  <li>🥈 Introduction to Internet of Things (Elite + Silver)</li>
+                </ul>
+              </motion.div>
+
+              {/* Ramanujan Competition */}
+
+              <motion.div
+                whileHover={{ y: -8 }}
+                onClick={() => {
+                  setSelectedGallery(ramanujanCertificates);
+                  setCurrentIndex(0);
+
+                  setSelectedCertificate(ramanujanCertificates[0]);
+                  setModalOpen(true);
+                }}
+                className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-500/50 transition-all duration-300"
+              >
+                <div className="text-5xl mb-4">🧮</div>
+
+                <h3 className="text-xl font-bold text-white-400 mb-3">
+                  Ramanujan Mathematical Competition
+                </h3>
+
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  Cleared Level 1 in 2024 and participated in Level 2. Cleared Level 1
+                  and Level 2 in 2026 and participated in the National Level (Level 3).
+                </p>
+              </motion.div>
+
+              {/* TechXConf */}
+
+              <motion.div
+                whileHover={{ y: -8 }}
+                onClick={() => {
+                  setSelectedCertificate({
+                    title: "TechX AI & Cloud Conference 2024",
+                    preview: "/certificate-previews/TechX-AI-&-Cloud-Conference-2024.jpg",
+                    pdf: "/certificates/TechX-AI-&-Cloud-Conference-2024.pdf",
+                  });
+                  setModalOpen(true);
+                }}
+                className="cursor-pointer p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300"
+              >
+                <div className="text-5xl mb-4">🎤</div>
+
+                <h3 className="text-xl font-bold text-white mb-3">
+                  TechX AI & Cloud Conference 2024
+                </h3>
+
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  Participated in TechX AI & Cloud Conference 2024 held in Chennai, exploring emerging
+                  technologies, industry trends, innovation, and networking opportunities
+                  with technology professionals.
+                </p>
+              </motion.div>
+
+            </div>
+
+          </div>
+
           {/* Highlights */}
           <div className="w-full mx-auto mt-12 mb-16">
             <motion.h2
@@ -637,11 +837,15 @@ export default function Education() {
                   icon: "🌐",
                   title: "GDG Tech Wing",
                   desc: "Active member of GDG On Campus RMKEC",
+                  preview: "/certificate-previews/GDG-RMKEC-Tech-Wing.jpg",
+                  pdf: "/certificates/GDG-RMKEC-Tech-Wing.pdf",
                 },
                 {
-                  icon: "💻",
-                  title: "Induskiller",
-                  desc: "Tech Team Intern",
+                  icon: "🤖",
+                  title: "Infosys Springboard",
+                  desc: "Artificial Intelligence Virtual Internship 6.0",
+                  preview: "/certificate-previews/Infosys-Springboard-Internship-6.0.jpg",
+                  pdf: "/certificates/Infosys-Springboard-Internship-6.0.pdf",
                 },
                 {
                   icon: "🏆",
@@ -666,7 +870,21 @@ export default function Education() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
                   whileHover={{ y: -6 }}
-                  className="p-6 rounded-2xl bg-white/5 border border-white/10 text-center flex flex-col justify-between h-full group"
+                  onClick={() => {
+                    if (item.pdf) {
+                      setSelectedCertificate({
+                        title: item.title,
+                        preview: item.preview,
+                        pdf: item.pdf,
+                      });
+                      setModalOpen(true);
+                    }
+                  }}
+                  className={`p-6 rounded-2xl bg-white/5 border border-white/10 text-center flex flex-col justify-between h-full group ${
+                    item.pdf
+                      ? "cursor-pointer hover:border-cyan-500/50"
+                      : ""
+                  }`}
                 >
                   <div>
                     <div className="text-5xl mb-4">
@@ -701,6 +919,19 @@ export default function Education() {
         </div>
       </div>
       <Footer />
+      <CertificateModal
+        isOpen={modalOpen}
+        onClose={() => {
+          setModalOpen(false);
+          setSelectedGallery([]);
+          setCurrentIndex(0);
+        }}
+        certificate={selectedCertificate}
+        gallery={selectedGallery}
+        currentIndex={currentIndex}
+        setCurrentIndex={setCurrentIndex}
+        setSelectedCertificate={setSelectedCertificate}
+      />
     </>
   );
 }

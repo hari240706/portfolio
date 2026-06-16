@@ -1,8 +1,15 @@
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { useState } from "react";
+import CertificateModal from "../components/CertificateModal";
+
 
 export default function About() {
+  const [selectedCertificate, setSelectedCertificate] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedGallery, setSelectedGallery] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const values = [
     {
       title: "AI for Security",
@@ -285,8 +292,16 @@ export default function About() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 md:mb-24 lg:mb-28">
 
               <motion.div
-                className="group"
+                className="group cursor-pointer"
                 whileHover={{ y: -6 }}
+                onClick={() => {
+                  setSelectedCertificate({
+                    title: "LTI Technology Offer Letter",
+                    preview: "/certificate-previews/LTI-Tech-Intern.jpg",
+                    pdf: "/certificates/LTI-Tech-Intern.pdf",
+                  });
+                  setModalOpen(true);
+                }}
               >
                 <div className="h-full p-6 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-2xl border border-white/10 hover:border-blue-500/50 transition-all duration-300 flex flex-col justify-between">
                   <div>
@@ -302,8 +317,16 @@ export default function About() {
               </motion.div>
 
               <motion.div
-                className="group"
+                className="group cursor-pointer"
                 whileHover={{ y: -6 }}
+                onClick={() => {
+                  setSelectedCertificate({
+                    title: "Induskiller Internship Certificate",
+                    preview: "/certificate-previews/Induskiller-Intern.jpg",
+                    pdf: "/certificates/Induskiller-Intern.pdf",
+                  });
+                  setModalOpen(true);
+                }}
               >
                 <div className="h-full p-6 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-2xl border border-white/10 hover:border-purple-500/50 transition-all duration-300 flex flex-col justify-between">
                   <div>
@@ -312,15 +335,26 @@ export default function About() {
                       Induskiller
                     </h3>
                   </div>
-                  <p className="text-gray-400 text-sm">
-                    Intern in Tech Team
-                  </p>
+
+                  <div>
+                    <p className="text-gray-400 text-sm">
+                      Intern in Tech Team
+                    </p>
+                  </div>
                 </div>
               </motion.div>
 
               <motion.div
-                className="group"
+                className="group cursor-pointer"
                 whileHover={{ y: -6 }}
+                onClick={() => {
+                  setSelectedCertificate({
+                    title: "GDG On Campus RMKEC",
+                    preview: "/certificate-previews/GDG-RMKEC-Tech-Wing.jpg",
+                    pdf: "/certificates/GDG-RMKEC-Tech-Wing.pdf",
+                  });
+                  setModalOpen(true);
+                }}
               >
                 <div className="h-full p-6 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-2xl border border-white/10 hover:border-cyan-500/50 transition-all duration-300 flex flex-col justify-between">
                   <div>
@@ -329,15 +363,26 @@ export default function About() {
                       GDG On Campus RMKEC
                     </h3>
                   </div>
-                  <p className="text-gray-400 text-sm">
-                    Tech Wing Member
-                  </p>
+
+                  <div>
+                    <p className="text-gray-400 text-sm">
+                      Tech Wing Member
+                    </p>
+                  </div>
                 </div>
               </motion.div>
 
               <motion.div
-                className="group"
+                className="group cursor-pointer"
                 whileHover={{ y: -6 }}
+                onClick={() => {
+                  setSelectedCertificate({
+                    title: "Infosys Springboard AI Internship",
+                    preview: "/certificate-previews/Infosys-Springboard-Internship-6.0.jpg",
+                    pdf: "/certificates/Infosys-Springboard-Internship-6.0.pdf",
+                  });
+                  setModalOpen(true);
+                }}
               >
                 <div className="h-full p-6 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-2xl border border-white/10 hover:border-pink-500/50 transition-all duration-300 flex flex-col justify-between">
                   <div>
@@ -420,36 +465,56 @@ export default function About() {
                   icon: "🎖️",
                   title: "NCC 'A' Certificate",
                   desc: "Awarded A Grade in National Cadet Corps",
+                  preview: "/certificate-previews/NCC-'A'-Certificate.jpg",
+                  pdf: "/certificates/NCC-'A'-Certificate.pdf",
                 },
                 {
                   icon: "🏕️",
                   title: "Tritiya Sopan Badge",
                   desc: "Bharat Scouts & Guides",
+                  preview: "/certificate-previews/BSG-Tritiya-Sopan-Certificate.jpg",
+                  pdf: "/certificates/BSG-Tritiya-Sopan-Certificate.pdf",
                 },
                 {
                   icon: "🐍",
                   title: "Python Programming",
                   desc: "A+ Grade - Sudharsanam IT Academy",
+                  preview: "/certificate-previews/NIIT-Programming-in-Python.jpg",
+                  pdf: "/certificates/NIIT-Programming-in-Python.pdf",
                 },
                 {
                   icon: "💻",
                   title: "C & C++ Programming",
                   desc: "A Grade - Sudharsanam IT Academy",
+                  preview: "/certificate-previews/NIIT-Programming-in-C-and-C++.jpg",
+                  pdf: "/certificates/NIIT-Programming-in-C-and-C++.pdf",
                 },
                 {
                   icon: "🎨",
                   title: "Graphic Designing",
                   desc: "A Grade - G-Tec Computer Education",
+                  preview: "/certificate-previews/GTEC-Graphic-Designing-Certificate.jpg",
+                  pdf: "/certificates/GTEC-Graphic-Designing-Certificate.pdf",
                 },
                 {
                   icon: "🤖",
                   title: "Virtual Internship 6.0 (Artificial Intelligence)",
                   desc: "Infosys Springboard",
+                  preview: "/certificate-previews/Infosys-Springboard-Internship-6.0.jpg",
+                  pdf: "/certificates/Infosys-Springboard-Internship-6.0.pdf",
                 },
               ].map((cert, index) => (
                 <motion.div
                   key={index}
-                  className="group"
+                  className="group cursor-pointer"
+                  onClick={() => {
+                    setSelectedCertificate({
+                      title: cert.title,
+                      preview: cert.preview,
+                      pdf: cert.pdf,
+                    });
+                    setModalOpen(true);
+                  }}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -608,6 +673,19 @@ export default function About() {
         </div>
       </div>
       <Footer />
+      <CertificateModal
+        isOpen={modalOpen}
+        onClose={() => {
+          setModalOpen(false);
+          setSelectedGallery([]);
+          setCurrentIndex(0);
+        }}
+        certificate={selectedCertificate}
+        gallery={selectedGallery}
+        currentIndex={currentIndex}
+        setCurrentIndex={setCurrentIndex}
+        setSelectedCertificate={setSelectedCertificate}
+      />
     </>
   );
 }

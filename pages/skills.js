@@ -2,9 +2,14 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import CertificateModal from "../components/CertificateModal";
 
 export default function Skills() {
+  const [selectedCertificate, setSelectedCertificate] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
   const [hoveredSkill, setHoveredSkill] = useState(null);
+  const [selectedGallery, setSelectedGallery] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const domains = [
     {
@@ -297,22 +302,32 @@ export default function Skills() {
                 {
                   icon: "🎨",
                   title: "Graphic Designing Certification",
+                  preview: "/certificate-previews/GTEC-Graphic-Designing-Certificate.jpg",
+                  pdf: "/certificates/GTEC-Graphic-Designing-Certificate.pdf",
                 },
                 {
                   icon: "🤖",
                   title: "Infosys Springboard Virtual Internship 6.0 (AI)",
+                  preview: "/certificate-previews/Infosys-Springboard-Internship-6.0.jpg",
+                  pdf: "/certificates/Infosys-Springboard-Internship-6.0n.pdf",
                 },
                 {
                   icon: "🐍",
                   title: "Programming in Python (A+ Grade)",
+                  preview: "/certificate-previews/NIIT-Programming-in-Python.jpg",
+                  pdf: "/certificates/NIIT-Programming-in-Python.pdf",
                 },
                 {
                   icon: "💻",
                   title: "Programming in C & C++ (A Grade)",
+                  preview: "/certificate-previews/NIIT-Programming-in-C-and-C++.jpg",
+                  pdf: "/certificates/NIIT-Programming-in-C-and-C++.pdf",
                 },
                 {
                   icon: "🎖️",
                   title: "NCC 'A' Certificate",
+                  preview: "/certificate-previews/NCC-'A'-Certificate.jpg",
+                  pdf: "/certificates/NCC-'A'-Certificate.pdf",
                 },
                 {
                   icon: "🛡️",
@@ -323,6 +338,14 @@ export default function Skills() {
                   key={index}
                   className="group p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-500/50 transition-all duration-300 flex flex-col justify-center h-full"
                   whileHover={{ y: -6 }}
+                  onClick={() => {
+                    setSelectedCertificate({
+                      title: cert.title,
+                      preview: cert.preview,
+                      pdf: cert.pdf,
+                    });
+                    setModalOpen(true);
+                  }}
                 >
                   <div className="text-center">
                     <div className="text-5xl mb-4">
@@ -350,6 +373,14 @@ export default function Skills() {
               <motion.div
                 whileHover={{ y: -6 }}
                 className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-500/50 transition-all duration-300 flex flex-col justify-between h-full"
+                onClick={() => {
+                  setSelectedCertificate({
+                    title: "GDG On Campus RMKEC",
+                    preview: "/certificate-previews/GDG-RMKEC-Tech-Wing.jpg",
+                    pdf: "/certificates/GDG-RMKEC-Tech-Wing.pdf",
+                  });
+                  setModalOpen(true);
+                }}
               >
                 <div>
                   <div className="text-5xl mb-4">🌐</div>
@@ -360,22 +391,6 @@ export default function Skills() {
                 <p className="text-gray-400 text-sm mt-2">
                   Tech Wing Member contributing to technical activities,
                   collaboration, and developer community initiatives.
-                </p>
-              </motion.div>
-
-              <motion.div
-                whileHover={{ y: -6 }}
-                className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300 flex flex-col justify-between h-full"
-              >
-                <div>
-                  <div className="text-5xl mb-4">💻</div>
-                  <h3 className="text-xl font-bold text-white mb-2">
-                    Induskiller
-                  </h3>
-                </div>
-                <p className="text-gray-400 text-sm mt-2">
-                  Tech Team Intern contributing to technical projects,
-                  development activities, and innovation initiatives.
                 </p>
               </motion.div>
             </div>
@@ -396,31 +411,63 @@ export default function Skills() {
                   icon: "💻",
                   title: "CodSoft",
                   role: "C++ Programming Intern",
+                  preview: "/certificate-previews/CodSoft-Intern.jpg",
+                  pdf: "/certificates/CodSoft-Intern.pdf",
                 },
                 {
                   icon: "🌐",
                   title: "CodeBind Technologies",
                   role: "Web Development Intern",
+                  preview: "/certificate-previews/CodeBind-Technologies-Intern.jpg",
+                  pdf: "/certificates/CodeBind-Technologies-Intern.pdf",
                 },
                 {
                   icon: "☕",
                   title: "Arttifai Tech",
                   role: "Java Programming Intern",
+                  preview: "/certificate-previews/Arttifai-Tech-Intern.jpg",
+                  pdf: "/certificates/Arttifai-Tech-Intern.pdf",
                 },
                 {
                   icon: "🛡️",
                   title: "AD Infocom Systems",
                   role: "Cybersecurity Intern",
+                  preview: "/certificate-previews/AD-Infocom-Systems-Intern.jpg",
+                  pdf: "/certificates/AD-Infocom-Systems-Intern.pdf",
+                },
+                {
+                  icon: "🤖",
+                  title: "Infosys Springboard Virtual Internship 6.0",
+                  role: "Artificial Intelligence Intern",
+                  preview: "/certificate-previews/Infosys-Springboard-Internship-6.0.jpg",
+                  pdf: "/certificates/Infosys-Springboard-Internship-6.0.pdf",
+                },
+                {
+                  title: "Induskiller",
+                  role: "Tech Team Intern",
+                  icon: "⚙️",
+                  preview: "/certificate-previews/Induskiller-Intern.jpg",
+                  pdf: "/certificates/Induskiller-Intern.pdf",
                 },
                 {
                   icon: "🚀",
                   title: "LTI Technology",
                   role: "Software Developer Intern",
+                  preview: "/certificate-previews/LTI-Tech-Intern.jpg",
+                  pdf: "/certificates/LTI-Tech-Intern.pdf",
                 },
               ].map((item, index) => (
                 <motion.div
                   key={index}
                   whileHover={{ y: -6 }}
+                  onClick={() => {
+                    setSelectedCertificate({
+                      title: item.title,
+                      preview: item.preview,
+                      pdf: item.pdf,
+                    });
+                    setModalOpen(true);
+                  }}
                   className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-500/50 transition-all duration-300 flex flex-col justify-between h-full"
                 >
                   <div>
@@ -469,6 +516,19 @@ export default function Skills() {
         </div>
       </div>
       <Footer />
+      <CertificateModal
+        isOpen={modalOpen}
+        onClose={() => {
+          setModalOpen(false);
+          setSelectedGallery([]);
+          setCurrentIndex(0);
+        }}
+        certificate={selectedCertificate}
+        gallery={selectedGallery}
+        currentIndex={currentIndex}
+        setCurrentIndex={setCurrentIndex}
+        setSelectedCertificate={setSelectedCertificate}
+      />
     </>
   );
 }

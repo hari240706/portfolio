@@ -7,9 +7,14 @@ import Footer from "../components/Footer";
 import { FaBrain, FaShieldAlt, FaCloud } from "react-icons/fa";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiLeetcode, SiHackerrank } from "react-icons/si";
+import CertificateModal from "../components/CertificateModal";
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [selectedCertificate, setSelectedCertificate] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedGallery, setSelectedGallery] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -116,6 +121,17 @@ export default function Home() {
     { name: "Kali Linux", icon: "🐉" },
     { name: "MongoDB", icon: "🍃" },
     { name: "Git", icon: "🔶" },
+  ];
+
+  const tags = [
+    { label: "🎓 CSE 2028" },
+    {
+      label: "💼 LTI Tech Intern",
+      preview: "/certificate-previews/LTI-Tech-Intern.jpg",
+      pdf: "/certificates/LTI-Tech-Intern.pdf",
+    },
+    { label: "🛡️ Cybersecurity" },
+    { label: "🤖 AI Security" },
   ];
 
   return (
@@ -300,17 +316,26 @@ export default function Home() {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.8 }}
                 >
-                  {[
-                    "🎓 CSE 2028",
-                    "💼 LTI Intern",
-                    "🛡️ Cybersecurity",
-                    "🤖 AI Security",
-                  ].map((item) => (
+                  {tags.map((item) => (
                     <div
-                      key={item}
-                      className="px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-sm text-gray-300 backdrop-blur-sm"
+                      key={item.label}
+                      onClick={() => {
+                        if (item.pdf) {
+                          setSelectedCertificate({
+                            title: item.label,
+                            preview: item.preview,
+                            pdf: item.pdf,
+                          });
+                          setModalOpen(true);
+                        }
+                      }}
+                      className={`px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-sm text-gray-300 backdrop-blur-sm ${
+                        item.pdf
+                          ? "cursor-pointer hover:border-cyan-500/50 hover:text-cyan-400 transition-all duration-300"
+                          : ""
+                      }`}
                     >
-                      {item}
+                      {item.label}
                     </div>
                   ))}
                 </motion.div>
@@ -579,6 +604,19 @@ export default function Home() {
         </section>
       </div>
       <Footer />
+      <CertificateModal
+        isOpen={modalOpen}
+        onClose={() => {
+          setModalOpen(false);
+          setSelectedGallery([]);
+          setCurrentIndex(0);
+        }}
+        certificate={selectedCertificate}
+        gallery={selectedGallery}
+        currentIndex={currentIndex}
+        setCurrentIndex={setCurrentIndex}
+        setSelectedCertificate={setSelectedCertificate}
+      />
     </>
   );
 }
