@@ -23,6 +23,13 @@
 # misc
 .DS_Store
 *.pem
+.idea/
+.history/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
 # debug
 npm-debug.log*
