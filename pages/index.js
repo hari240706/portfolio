@@ -126,7 +126,7 @@ export default function Home() {
   const tags = [
     { label: "🎓 CSE 2028" },
     {
-      label: "💼 LTI Tech Intern",
+      label: "💼 LTI Technology Team Lead",
       preview: "/certificate-previews/LTI-Tech-Intern.jpg",
       pdf: "/certificates/LTI-Tech-Intern.pdf",
     },
@@ -172,7 +172,7 @@ export default function Home() {
         <section className="relative flex items-center pt-24 md:pt-32 pb-16 md:pb-24 lg:pb-28">
           <div className="w-full px-4 md:px-12 lg:px-16 relative z-10">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-              
+
               {/* Text Content (Name, Role, Description, Buttons, Socials, Tags, and Desktop Tech Stack) */}
               <motion.div
                 className="flex-1 text-white text-center lg:text-left flex flex-col items-center lg:items-start w-full"
@@ -190,7 +190,7 @@ export default function Home() {
                     <span className="px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 text-blue-400 text-sm font-medium backdrop-blur-sm">
                       🛡️ Building Secure Intelligence with AI
                     </span>
-                  
+
                     <span className="px-4 py-2 rounded-full bg-green-500/10 border border-green-500/30 text-green-400 text-sm">
                       🚀 Open to Internships & Cybersecurity Opportunities
                     </span>
@@ -329,11 +329,10 @@ export default function Home() {
                           setModalOpen(true);
                         }
                       }}
-                      className={`px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-sm text-gray-300 backdrop-blur-sm ${
-                        item.pdf
+                      className={`px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-sm text-gray-300 backdrop-blur-sm ${item.pdf
                           ? "cursor-pointer hover:border-cyan-500/50 hover:text-cyan-400 transition-all duration-300"
                           : ""
-                      }`}
+                        }`}
                     >
                       {item.label}
                     </div>
@@ -433,7 +432,7 @@ export default function Home() {
                   <div className="absolute inset-8 sm:inset-10 md:inset-12 rounded-full overflow-hidden border-4 border-transparent bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 p-1 shadow-[0_0_60px_rgba(59,130,246,0.35)]">
                     <div className="w-full h-full rounded-full overflow-hidden bg-black relative">
                       <Image
-                        src="/assets/Gemini_Generated_Image_mt5l74mt5l74mt5l-1.jpg"
+                        src="/assets/Photo.jpg"
                         alt="Hariprasad R"
                         width={600}
                         height={600}
