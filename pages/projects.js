@@ -272,9 +272,19 @@ export default function Projects() {
               </div>
 
               <div className="flex flex-col lg:flex-row gap-8 items-center text-center lg:text-left">
-                <div className="text-8xl flex justify-center w-full lg:w-auto">
+                <motion.div
+                  className="text-8xl flex justify-center w-full lg:w-auto"
+                  animate={{
+                    y: [0, -12, 0],
+                  }}
+                  transition={{
+                    duration: 2.5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                >
                   🚀
-                </div>
+                </motion.div>
 
                 <div className="flex-1 w-full flex flex-col items-center lg:items-start">
                   <h3 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 leading-tight">

@@ -19,7 +19,7 @@ export default function Education() {
       current: true,
       year: "3rd Year",
       achievements: [
-        "Current CGPA: 7.59",
+        "Current CGPA: 7.66",
         "Participated in 14 hackathons and innovation challenges",
         "Developed AI, Cybersecurity, and Full-Stack projects",
         "Tech Wing Member at GDG On Campus RMKEC",
@@ -218,7 +218,7 @@ export default function Education() {
           {/* Education Stats */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16 md:mb-20">
             <div className="text-center p-6 rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-center h-full">
-              <div className="text-3xl sm:text-4xl font-bold text-blue-400">7.59</div>
+              <div className="text-3xl sm:text-4xl font-bold text-blue-400">7.66</div>
               <p className="text-gray-400 text-sm">Current CGPA</p>
             </div>
 

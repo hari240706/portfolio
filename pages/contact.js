@@ -202,7 +202,7 @@ export default function Contact() {
           >
             {[
               {
-                value: "7.59",
+                value: "7.66",
                 label: "CGPA",
                 color: "text-blue-400",
               },
